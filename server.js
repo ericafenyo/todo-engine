@@ -25,7 +25,13 @@
 
 const app = require('./app');
 
-const PORT = '8080';
+/*
+ * Use an environment variable for the port if it exists
+ * else use 8080 as a fallback.
+ */
+const PORT = process.env.PORT || '8080';
+
+
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
 });
