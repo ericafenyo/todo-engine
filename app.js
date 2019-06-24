@@ -26,13 +26,13 @@
  */
 
 const express = require('express');
-const jwt = require("jsonwebtoken");
 const tasks = require('./api/routes/tasks');
 
 const app = express();
 
-console.log(tasks);
-
+app.get('/', (request, response) => {
+  response.sendStatus(200);
+})
 
 // Use the `tasks` routes when a get request is made to `/tasks`.
 app.use('/tasks', tasks);
